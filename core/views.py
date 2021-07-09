@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from core.forms import ContatoForm, ProdutoModelForm
 from .models import Produto
@@ -31,6 +32,7 @@ def contato(request):
     return render(request, 'contato.html', context)
 
 
+@login_required(login_url='/')
 def produto(request):
     if str(request.method) == 'POST':
         form = ProdutoModelForm(request.POST, request.FILES)
