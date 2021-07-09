@@ -92,7 +92,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '71txkq',
         'HOST': 'localhost',
-        'PORT': '3310',
+        'PORT': '3306',
     }
 }
 """
@@ -137,8 +137,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configurações de E-MAIL
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+# Se tiver servidor de e-mail:
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'dc529f79e02907'
+EMAIL_HOST_PASSWORD = 'f9661a3d71865d'
+EMAIL_PORT = '2525'
